@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 
+group = 'com.github.f14shm4n'
+
 android {
     compileSdkVersion 25
     buildToolsVersion "26.0.2"
