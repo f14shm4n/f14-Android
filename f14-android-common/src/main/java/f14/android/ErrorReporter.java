@@ -1,6 +1,5 @@
 package f14.android;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
@@ -10,7 +9,17 @@ import f14.common.ExHelper;
  * Created by f14shm4n on 22.11.2017.
  */
 
+/**
+ *
+ */
 public final class ErrorReporter {
+
+    /**
+     *
+     * @param context
+     * @param intentClass
+     * @param e
+     */
     public static void sendErrorReport(Context context, Class<?> intentClass, Exception e) {
         Intent resultIntent = new Intent(context, intentClass);
         resultIntent.putExtra("EX_DATA", e.toString());

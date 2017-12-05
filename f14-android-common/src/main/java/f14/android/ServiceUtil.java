@@ -1,7 +1,10 @@
 package f14.android;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 /**
  * Created by f14shm4n on 11.11.2017.
@@ -17,6 +20,13 @@ public class ServiceUtil {
             }
         }
         return false;
+    }
+
+    @SuppressLint("MissingPermission")
+    public static boolean isNetworkEnabled(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 
 }
